@@ -1,7 +1,7 @@
 package graphs.controllers
 
 import javax.inject._
-import models.{FileOption, Team}
+import models.{FileOption, Image, Team}
 import play.api._
 import play.api.i18n._
 import play.api.mvc._
@@ -32,6 +32,14 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 	}
 
 	def about: Action[AnyContent] = TODO
+
+	def album: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+		//TODO should use the directory listing to filter for files present
+		//val filelist: Array[File] = Environment.simple().getFile("server/public/figs/capacity_plots").listFiles()
+		val files: Seq[Image] = config.get[Seq[Image]]("album_files")
+
+		Ok(views.html.album(files.toList))
+	}
 
 	def donut: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
 		val files: Seq[FileOption] = config.get[Seq[FileOption]]("graph_files")
