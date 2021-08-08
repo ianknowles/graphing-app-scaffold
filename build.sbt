@@ -69,6 +69,7 @@ lazy val server = (project in file("server"))
 			"com.h2database" % "h2" % "1.4.200"
 		),
 		Linux / maintainer := "Ian Knowles <ian@imknowles.co.uk>",
+		Linux / name := normalizedName.value,
 		Linux / packageSummary := description.value,
 		Linux / packageDescription := description.value,
 		Debian / debianPackageDependencies := Seq("openjdk-11-jre-headless"),
