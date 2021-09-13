@@ -1,9 +1,15 @@
 # Setup
 The ***Scala*** language extends the ***Java*** language with improvements to language features and syntax. While it
 supports javascript and native runtime environments the primary runtime environment is the ***JRE***, developing for the
-***JRE*** requires a ***JDK*** install.
-* Install a [JDK](https://adoptopenjdk.net/).
+***JRE*** requires a ***JDK*** install. Some options for installation follow.
+* Install a standalone [JDK](https://adoptopenjdk.net/).
 	> https://adoptopenjdk.net/installation.html
+* Managing multiple versions of the ***JDK*** can be done from terminals using ***SDKMAN!***.
+	> https://sdkman.io/install
+
+	> https://sdkman.io/jdks#AdoptOpenJDK
+* When using ***IntelliJ IDEA*** you can use it to manage ***JDK*** installs from the settings dialogue.
+	> https://www.jetbrains.com/help/idea/sdk.html#jdk-from-ide
 
 ## Setup for command line
 ***Scala*** projects use ***sbt*** as a portable build tool that can be used standalone or with an IDE.
@@ -21,6 +27,8 @@ academic users.
 	> This plugin requires ***IntelliJ***, other Jetbrains IDEs are not supported. ***Community edition*** will enable
 	> debugging and syntax highlighting in the project and support for Scala, while ***Ultimate edition*** will
 	> additionally enable full support for Play framework, HTML, CSS, SCSS, Javascript and Scala.js.
+* Optionally, install a ***JDK*** managed by ***IntelliJ***.
+	> https://www.jetbrains.com/help/idea/sdk.html#jdk-from-ide
 * Set the ***project SDK*** to the installed ***JDK***.
 	> https://www.jetbrains.com/help/idea/sdk.html#set-up-jdk
 * The scala plugin will install a managed version of ***sbt***, you can optionally reconfigure the project to use a
