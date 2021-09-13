@@ -77,7 +77,7 @@ used:
 * Use a browser's developer tools to debug javascript and scala.js sources. ***Firefox Developer Edition*** is
 	recommended, `F12` key opens the dev tools in most browsers.
 	> https://developer.mozilla.org/en-US/docs/Tools
-* The Play application log is saved to [server/logs/application.log](server/logs/application.log).
+* The Play application log is saved to [server/logs/application.log](../server/logs/application.log).
 	> https://www.playframework.com/documentation/2.8.x/Anatomy#The-Play-application-layout
 
 [sbt download]: https://www.scala-sbt.org/download.html
