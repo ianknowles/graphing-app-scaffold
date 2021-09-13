@@ -34,7 +34,7 @@ academic users.
 * The scala plugin will install a managed version of ***sbt***, you can optionally reconfigure the project to use a
 	[standalone installation][sbt download] by changing the ***sbt launcher*** location setting.
 	> https://www.jetbrains.com/help/idea/sbt.html
-* Import the project folder from Github as a ***sbt*** project.
+* Import the project folder from GitHub as a ***sbt*** project.
 	> https://www.jetbrains.com/help/idea/manage-projects-hosted-on-github.html#clone-from-GitHub
 
 	> https://www.jetbrains.com/help/idea/sbt-support.html#import_sbt
