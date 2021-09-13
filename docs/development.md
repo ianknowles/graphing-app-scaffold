@@ -44,11 +44,11 @@ academic users.
 	> required standalone sbt installs (fixed) and did not correctly regenerate project structure definitions on changes
 	> to `build.sbt`.
 * When you open the project folder in ***IntelliJ*** it will need to build the project structure definitions from the
-	`build.sbt` definition. Any changes to `build.sbt` require a new build of the project structure.
+	[build.sbt][build.sbt] definition. Any changes to `build.sbt` require a new build of the project structure.
 	> https://www.jetbrains.com/help/idea/sbt-support.html#manage_sbt_projects
 
 ## Alternatives to IntelliJ
-The project build, structure, and dependencies are defined in `build.sbt`, any Scala IDE can interact with ***sbt*** to 
+The project build, structure, and dependencies are defined in [build.sbt][build.sbt], any Scala IDE can interact with ***sbt*** to 
 build and run the project, and generate structure definitions and dependency lists. The following alternatives can be
 used:
 * [ScalaIDE](http://scala-ide.org/)
@@ -89,3 +89,4 @@ used:
 	> https://www.playframework.com/documentation/2.8.x/Anatomy#The-Play-application-layout
 
 [sbt download]: https://www.scala-sbt.org/download.html
+[build.sbt]: ../build.sbt
