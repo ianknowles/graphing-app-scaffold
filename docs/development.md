@@ -71,7 +71,7 @@ used:
 		> https://www.jetbrains.com/help/idea/sbt-support.html#sbt_shell
 * After the ***sbt shell*** has loaded use the `run` command.
 	> https://www.playframework.com/documentation/2.8.x/PlayConsole
-* Browse to http://localhost:9000.
+* Browse to http://localhost:9001.
 	> https://www.playframework.com/documentation/2.8.x/NewApplication#Scala-template
 
 # Debugging
