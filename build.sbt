@@ -63,7 +63,7 @@ lazy val server = (project in file("server"))
 			"org.webjars" % "d3js" % "5.9.7",
 			"org.webjars.npm" % "topojson" % "3.0.2",
 			"org.webjars" % "jquery" % "3.6.0",
-			"org.webjars" % "popper.js" % "2.9.2",
+			"org.webjars" % "popper.js" % "2.9.3",
 			"org.webjars" % "c3" % "0.6.6",
 			"com.typesafe.play" %% "play-slick" % "5.0.0",
 			"com.typesafe.play" %% "play-slick-evolutions" % "5.0.0",
