@@ -7,7 +7,7 @@
 @import "index";
 
 .top-0 {
-	top: 0px;
+	top: 0;
 }
 
 body {
@@ -35,11 +35,13 @@ body {
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
 
 .background-color-sea {
-	background:LightCyan
+	background: LightCyan;
 }
+
 .active {
 	background-color: rgba(0, 0, 0, 0.03);
 }
+
 .border-right-2 {
 	border-right-width: 2px;
 }

@@ -9,11 +9,13 @@ input[type="color" i] {
 	width: 38px ! important;
 	height: 38px ! important;
 }
+
 @media (min-width: 768px) {
 	.color-pick-size {
 		width: 76px ! important;
 	}
 }
+
 .color-pick-right {
-	right: 0px ! important;
+	right: 0 ! important;
 }
