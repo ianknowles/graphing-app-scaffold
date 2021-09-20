@@ -1,14 +1,18 @@
 # https://www.playframework.com/documentation/latest/ScalaI18N
+
+# --- Site and Project
 site.title=site.title
 site.desc=site.desc
 project.name=project.name
 project.year=2021
 project.copyright=Ian Knowles
 
+# --- Index page
 index.title=Home
 index.jumbo.title=jumbo.title
 index.jumbo.desc=jumbo.desc
 
+# --- Pages
 team.title=Team
 team.desc=Meet the project members.
 
@@ -20,12 +24,15 @@ donut.title=Donut
 project.title=Project
 project.desc=See the background of the project, and an overview of the data sources.
 
-nav.data.title=Data
-nav.about.title=About
-nav.currentPageIndicator=Current
 privacy.title=Privacy Policy
 contact.title=Contact Us
 
+# --- Nav
+nav.data.title=Data
+nav.about.title=About
+nav.currentPageIndicator=Current
+
+# --- Controls
 controls.reportpicker.label=Time series picker
 
 controls.timespan.from=Start year for graph
@@ -36,6 +43,7 @@ controls.graph.category=Filter by characteristic
 controls.data.share=Share
 controls.data.download=Download
 
+# --- People db example
 name = Name
 age = Age
 
