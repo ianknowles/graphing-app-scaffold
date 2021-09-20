@@ -15,19 +15,6 @@ body {
 }
 
 /*
- * Content
-*/
-
-[role="main"] {
-	padding-top: 126px; /* Space for fixed navbar */
-}
-@media (min-width: 768px) {
-	[role="main"] {
-		padding-top: 96px;
-	}
-}
-
-/*
  * Utilities
  */
 

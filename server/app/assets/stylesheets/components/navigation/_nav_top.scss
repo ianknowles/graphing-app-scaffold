@@ -1,4 +1,26 @@
 /*
+ * Fixed header padding
+*/
+
+html {
+	scroll-padding-top: 140px;
+}
+
+[role="main"] {
+	padding-top: 136px;
+}
+
+@media (min-width: 768px) {
+	html {
+		scroll-padding-top: 100px;
+	}
+
+	[role="main"] {
+		padding-top: 96px;
+	}
+}
+
+/*
  * Navbar
  */
 
