@@ -1,6 +1,6 @@
-@(acknowledgements: List[Acknowledgement])(implicit messages: Messages)
+@()(implicit messages: Messages)
 <div class="d-flex flex-column flex-lg-row flex-wrap justify-content-center align-content-center">
-	@for(acknowledgement <- acknowledgements) {
+	@for(acknowledgement <- Acknowledgements.primary) {
 		@components.navigation.acknowledgement(acknowledgement)
 	}
 </div>
