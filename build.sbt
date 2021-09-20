@@ -59,7 +59,7 @@ lazy val server = (project in file("server"))
 			"org.webjars" %% "webjars-play" % "2.8.8",
 			//"org.webjars" % "bootstrap" % "5.0.0",
 			"org.webjars" % "bootstrap" % "4.6.0",
-			"org.webjars.npm" % "bootstrap-icons" % "1.4.1",
+			"org.webjars.npm" % "bootstrap-icons" % "1.5.0",
 			"org.webjars" % "d3js" % "5.9.7",
 			"org.webjars.npm" % "topojson" % "3.0.2",
 			"org.webjars" % "jquery" % "3.6.0",
