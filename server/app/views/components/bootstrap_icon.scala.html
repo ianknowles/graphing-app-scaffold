@@ -1,4 +1,5 @@
 @(icon: String, CSSClass: String = "", alt: String = "")
 <svg class="bi @CSSClass" @if(!alt.isBlank) {alt="@alt"}>
+	@* https://icons.getbootstrap.com/ *@
 	<use xlink:href='@routes.Assets.versioned("lib/bootstrap-icons/bootstrap-icons.svg")#@icon'/>
 </svg>
