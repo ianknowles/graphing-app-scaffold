@@ -1,5 +1,5 @@
 @(route: play.api.mvc.Call, icon: String, messageID: String, CSSClass: String)(implicit messages: Messages, request: Request[AnyContent])
-<a class='@{CSSClass} @{if (request.path == route.toString) { "active" }}'
+<a class="@{CSSClass} @{if (request.path == route.toString) { "active" }}"
    href="@route">
 	@components.bootstrap_icon(icon, "bi-16")
 	<span class="ml-1">@messages(messageID)</span>
