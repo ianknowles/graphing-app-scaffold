@@ -21,7 +21,7 @@ main {
 
 //TODO better integrate with bootstrap should be able to retrieve the theme colors, links are also shaded slightly differently
 @media (prefers-color-scheme: dark) {
-	main {
+	main, footer, .sidebar, .sidebar .nav-link {
 		color: $light !important;
 		background-color: $dark !important;
 	}
@@ -32,7 +32,7 @@ main {
 }
 
 @media (prefers-color-scheme: light) {
-	main {
+	main, footer, .sidebar, .sidebar .nav-link {
 		color: $dark !important;
 		background-color: $light !important;
 	}
