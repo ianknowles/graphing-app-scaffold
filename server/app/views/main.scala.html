@@ -10,10 +10,10 @@
 	@metadata_page(title.split('-').head.trim)
 
 	<title>@title</title>
-	<link rel="shortcut icon" type="image/png" href='@routes.Assets.versioned("images/favicon.png")'>
+	<link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")" />
 
 	@webJarsUtil.locate("c3.min.css").css()
-	<link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/main.css")'>
+	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")" />
 </head>
 <body class="vh-100">
 @components.navigation.header()
