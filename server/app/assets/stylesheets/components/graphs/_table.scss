@@ -49,6 +49,46 @@ only screen and (max-width: 1199.98px),
 	}
 }
 
+//TODO table :active styles, hover on columns? accent styles?
+@media (prefers-color-scheme: dark) {
+	table {
+		color: $white !important;
+		background-color: $dark !important;
+	}
+
+	th, td {
+		//border-color: #454d55;
+		border-color: lighten($dark, 7.5%) !important;
+	}
+
+	tbody tr:nth-of-type(2n+1) {
+		background-color: rgba($white, .05);
+	}
+
+	tbody tr:hover {
+		background-color: rgba($white, .075);
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	table {
+		color: $gray-900 !important;
+		background-color: #fdfdfe !important;
+	}
+
+	th, td {
+		border-color: #fbfcfc !important;
+	}
+
+	tbody tr:nth-of-type(2n+1) {
+		background-color: rgba($black, .05);
+	}
+
+	tbody tr:hover {
+		background-color: rgba($black, .075);
+	}
+}
+
 .header, .ascending, .descending {
 	cursor: pointer;
 }

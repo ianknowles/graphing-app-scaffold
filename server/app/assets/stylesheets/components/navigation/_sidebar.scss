@@ -2,6 +2,28 @@
  * Sidebar
  */
 
+@media (prefers-color-scheme: dark) {
+	.sidebar {
+		color: $light !important;
+		background-color: $dark !important;
+	}
+
+	.sidebar .nav-link {
+		color: $light !important;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	.sidebar {
+		color: $dark !important;
+		background-color: $light !important;
+	}
+
+	.sidebar .nav-link {
+		color: $dark !important;
+	}
+}
+
 .sidebar {
 	position: fixed;
 	top: 0;
