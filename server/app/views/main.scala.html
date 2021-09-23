@@ -4,31 +4,31 @@
 @(title: String)(content: Html)(scripts: Html = Html(""))(implicit webJarsUtil: org.webjars.play.WebJarsUtil, messages: Messages, request: Request[AnyContent])
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	@metadata_page(title.split('-').head.trim)
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		@metadata_page(title.split('-').head.trim)
 
-	<title>@title</title>
-	<link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")" />
+		<title>@title</title>
+		<link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")" />
 
-	<meta name="color-scheme" content="dark light" />
-	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343A40FF" />
-	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#343A40FF" />
-	@webJarsUtil.locate("c3.min.css").css()
-	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")" />
-</head>
-<body>
-@components.navigation.header()
-<main>
-	@content
-</main>
-@components.navigation.footer()
+		<meta name="color-scheme" content="dark light" />
+		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343A40FF" />
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#343A40FF" />
+		@webJarsUtil.locate("c3.min.css").css()
+		<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")" />
+	</head>
+	<body>
+		@components.navigation.header()
+		<main>
+			@content
+		</main>
+		@components.navigation.footer()
 
-@webJarsUtil.locate("jquery.slim.min.js").script()
-@webJarsUtil.locate("umd/popper.min.js").script()
-@webJarsUtil.locate("bootstrap.min.js").script()
-@scripts
-@scalajs.html.scripts("client", routes.Assets.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
-</body>
+		@webJarsUtil.locate("jquery.slim.min.js").script()
+		@webJarsUtil.locate("umd/popper.min.js").script()
+		@webJarsUtil.locate("bootstrap.min.js").script()
+		@scripts
+		@scalajs.html.scripts("client", routes.Assets.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
+	</body>
 </html>
