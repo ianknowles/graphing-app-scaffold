@@ -2,11 +2,11 @@
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
 	<span class="navbar-toggler-icon"></span>
 </button>
-<div class="collapse navbar-collapse align-items-end" id="navbarMain">
+<nav class="collapse navbar-collapse align-items-end" id="navbarMain">
 	<ul class="navbar-nav mr-auto">
 		@components.navigation.menu_home()
 		@components.navigation.menu_data()
 		@components.navigation.menu_about()
 	</ul>
 	<span id="offlineIndicator" class="navbar-text px-3 display-5 d-none">@messages("offline.status")</span>
-</div>
+</nav>
