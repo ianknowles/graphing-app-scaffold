@@ -12,11 +12,17 @@
 
 body {
 	font-size: .875rem;
+	@extend .vh-100;
+	@extend .d-flex;
+	@extend .flex-column;
+	@extend .justify-content-between;
 }
 
 main {
 	@extend .bg-light;
 	@extend .text-dark;
+	@extend .px-0;
+	@extend .flex-fill;
 }
 
 //TODO better integrate with bootstrap should be able to retrieve the theme colors, links are also shaded slightly differently
