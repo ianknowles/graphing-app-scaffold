@@ -18,11 +18,34 @@ main {
 	main {
 		padding-top: 96px;
 	}
+
+	.navbar-brand h1 {
+		@include font-size($h1-font-size);
+	}
+
+	.navbar-brand {
+		//TODO forcing the width on this element breaks flex behaviours requiring arbitrary pixel sizes here. rework the flex settings
+		min-width: 480px !important;
+		width: 50% !important;
+	}
 }
 
 /*
  * Navbar
  */
+
+.navbar {
+	@extend .flex-md-nowrap;
+	@extend .navbar-expand-md;
+	@extend .flex-column;
+	@extend .flex-md-row;
+	@extend .navbar-dark;
+	@extend .fixed-top;
+	@extend .bg-dark;
+	@extend .p-0;
+	@extend .shadow;
+	@extend .align-items-stretch;
+}
 
 .navbar-brand {
 	padding-top: .75rem;
@@ -30,6 +53,16 @@ main {
 	font-size: 1rem;
 	background-color: rgba(0, 0, 0, .25);
 	box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+	@extend .mr-0;
+	@extend .mr-md-3;
+	@extend .px-3;
+	@extend .w-100;
+}
+
+.navbar-brand h1 {
+	@extend .my-0;
+	@extend .h2;
+	@extend .svgtext;
 }
 
 .navbar .form-control {
