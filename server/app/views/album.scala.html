@@ -1,6 +1,6 @@
 @(files: List[Image])(implicit webJarsUtil: org.webjars.play.WebJarsUtil, messages: Messages, request: Request[AnyContent])
 
-@main(s"${messages("album.title")} - ${messages("site.title")}") {
+@main(messages("album.title")) {
 	<section class="jumbotron text-center">
 		<div class="container">
 			<h1 class="text-dark">Capacity maps</h1>
