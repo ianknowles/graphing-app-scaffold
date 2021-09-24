@@ -81,3 +81,9 @@ main {
 	border-color: transparent;
 	box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
+
+//TODO work on .active style, switch over to :active, work on :hover
+.dropdown, .dropdown-menu, .dropdown-item {
+	@extend .bg-dark;
+	@extend .text-light;
+}
