@@ -11,6 +11,7 @@
 <meta property="og:type" content="website" />
 @* TODO solve this properly *@
 <meta property="og:url" content="@{new URL(if (request.secure) "https" else "http", request.domain, if (request.host.split(':').length == 2) request.host.split(':').last.toInt else -1, request.uri).toString}" />
+@* TODO set locale based on the locale selected in messages *@
 <meta property="og:locale" content="en_GB" />
 <meta property="og:image" content="@routes.Assets.versioned("images/site_preview.png")" />
 
