@@ -3,6 +3,7 @@
 # --- Site and Project
 site.title=site.title
 site.desc=site.desc
+site.keywords=dashboard, scaffold, scala, playframework, twirl, scss, scalajs
 project.name=project.name
 project.year=2021
 project.copyright=Ian Knowles
