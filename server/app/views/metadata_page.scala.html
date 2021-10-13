@@ -12,7 +12,7 @@
 @* TODO solve this properly *@
 <meta property="og:url" content="@{new URL(if (request.secure) "https" else "http", request.domain, if (request.host.split(':').length == 2) request.host.split(':').last.toInt else -1, request.uri).toString}" />
 <meta property="og:locale" content="en_GB" />
-<meta property="og:image" content="@routes.Assets.versioned("images/social_preview.png")" />
+<meta property="og:image" content="@routes.Assets.versioned("images/site_preview.png")" />
 
 @* Twitter card metadata for link previews
  * Most values have open-graph fallbacks, so only overrides or unique properties should be defined here

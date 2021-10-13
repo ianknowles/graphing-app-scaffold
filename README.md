@@ -1,4 +1,4 @@
-![Preview image of the main visualisation for graphing-app-scaffold](server/public/images/social_preview.png "graphing-app-scaffold")
+![Preview image of the main visualisation for graphing-app-scaffold](server/public/images/site_preview.png "graphing-app-scaffold")
 
 # graphing-app-scaffold
 
