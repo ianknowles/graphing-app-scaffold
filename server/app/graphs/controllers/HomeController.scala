@@ -15,7 +15,7 @@ import graphs.shared.SharedMessages
 class HomeController @Inject() (val controllerComponents: ControllerComponents, config: Configuration)(implicit webJarsUtil: org.webjars.play.WebJarsUtil) extends BaseController with I18nSupport {
 
 	def index: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
-		Ok(views.html.index(SharedMessages.itWorks))
+		Ok(views.html.pages.index(SharedMessages.itWorks))
 	}
 
 	def coming_soon: Action[AnyContent] = TODO
@@ -28,7 +28,7 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 		// allow use of the auto json convert and avoid the boilerplate
 		val files: Seq[FileOption] = config.get[Seq[FileOption]]("graph_files")
 
-		Ok(views.html.dashboard(files.toList))
+		Ok(views.html.pages.dashboard(files.toList))
 	}
 
 	def about: Action[AnyContent] = TODO
@@ -38,23 +38,23 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 		//val filelist: Array[File] = Environment.simple().getFile("server/public/figs/capacity_plots").listFiles()
 		val files: Seq[Image] = config.get[Seq[Image]]("album_files")
 
-		Ok(views.html.album(files.toList))
+		Ok(views.html.pages.album(files.toList))
 	}
 
 	def donut: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
 		val files: Seq[FileOption] = config.get[Seq[FileOption]]("graph_files")
-		Ok(views.html.donut(files.toList))
+		Ok(views.html.pages.donut(files.toList))
 	}
 
 	def project: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
-		Ok(views.html.project())
+		Ok(views.html.pages.project())
 	}
 
 	def team: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
-		Ok(views.html.team(Team.people))
+		Ok(views.html.pages.team(Team.people))
 	}
 
 	def privacy: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
-		Ok(views.html.privacy())
+		Ok(views.html.pages.privacy())
 	}
 }

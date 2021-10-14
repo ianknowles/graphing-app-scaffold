@@ -31,7 +31,7 @@ class PersonController @Inject()(repo: PersonRepository,
    * The index action.
    */
   def index: Action[AnyContent] = Action { implicit request =>
-    Ok(views.html.addpeople(personForm))
+    Ok(views.html.pages.addpeople(personForm))
   }
 
   /**
@@ -46,7 +46,7 @@ class PersonController @Inject()(repo: PersonRepository,
       // We also wrap the result in a successful future, since this action is synchronous, but we're required to return
       // a future because the person creation function returns a future.
       errorForm => {
-        Future.successful(Ok(views.html.addpeople(errorForm)))
+        Future.successful(Ok(views.html.pages.addpeople(errorForm)))
       },
       // There were no errors in the from, so create the person.
       person => {
@@ -63,7 +63,7 @@ class PersonController @Inject()(repo: PersonRepository,
    */
   def viewPersons: Action[AnyContent] = Action.async { implicit request =>
     repo.list().map { people =>
-      Ok(views.html.people(people))
+      Ok(views.html.pages.people(people))
     }
   }
     
