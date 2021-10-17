@@ -9,10 +9,61 @@ article.team-member {
 	@extend .flex-row;
 }
 
-article.team-member > div:nth-child(1) {
+div.team-member-image {
 	width: calc(100%/3);
 }
 
-article.team-member > div:nth-child(2) {
+div.team-member-image > img {
+	@extend .rounded;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+div.team-member-content {
 	width: calc(100% - (100%/3));
+	@extend .d-flex;
+	@extend .flex-column;
+}
+
+div.team-member-body {
+	@extend .card-body;
+}
+
+div.team-member-body > p {
+	@extend .card-text;
+}
+
+div.team-member-footer {
+	@extend .card-footer;
+}
+
+.team-member ul {
+	@extend .list-group;
+	@extend .list-group-flush;
+}
+
+.team-member li {
+	@extend .list-group-item;
+	@extend .bg-transparent;
+}
+
+.team-member svg.bi {
+	@extend .bi-24;
+	@extend .mr-1;
+}
+
+.team-member a {
+	@extend .card-link;
+}
+
+.team-member h1 {
+	@extend .card-title;
+}
+
+.team-member-subtitle {
+	@extend .card-subtitle;
+	@extend .mb-2;
+	@extend .text-muted;
+	@extend .h4;
 }

@@ -1,20 +1,20 @@
 @(teamMember: TeamMember)
 <article id="@teamMember.id" class="team-member">
-	<div>
-		<img class="rounded h-100 w-100" style="object-fit: cover" alt="@teamMember.name" src="@teamMember.imageURL" />
+	<div class="team-member-image">
+		<img alt="@teamMember.name" src="@teamMember.imageURL" />
 	</div>
-	<div class="d-flex flex-column justify-content-between">
-		<div class="card-body">
-			<h1 class="card-title">@teamMember.name</h1>
-			<h4 class="card-subtitle mb-2 text-muted">@teamMember.job</h4>
-			<p class="card-text">@teamMember.desc</p>
+	<div class="team-member-content">
+		<div class="team-member-body">
+			<h1>@teamMember.name</h1>
+			<p class="team-member-subtitle">@teamMember.job</p>
+			<p>@teamMember.desc</p>
 		</div>
-		<div class="card-footer">
-			<ul class="list-group list-group-flush">
+		<div class="team-member-footer">
+			<ul>
 			@for(link <- teamMember.links) {
-				<li class="list-group-item bg-transparent">
-					@components.bootstrap_icon(link.icon, "bi-24 mr-1")
-					<a class="card-link" href="@link.url" target="_blank" rel="noopener">@link.text</a>
+				<li>
+					@components.bootstrap_icon(link.icon)
+					<a href="@link.url" target="_blank" rel="noopener">@link.text</a>
 				</li>
 			}
 			</ul>
