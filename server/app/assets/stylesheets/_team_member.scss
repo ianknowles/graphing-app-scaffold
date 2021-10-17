@@ -6,3 +6,11 @@ article.team-member {
 	@extend .text-dark;
 	@extend .flex-row;
 }
+
+article.team-member > div:nth-child(1) {
+	width: calc(100%/3);
+}
+
+article.team-member > div:nth-child(2) {
+	width: calc(100% - (100%/3));
+}
