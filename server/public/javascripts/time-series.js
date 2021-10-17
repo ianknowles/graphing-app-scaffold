@@ -22,7 +22,7 @@ function change_report() {
 
 function fetch_json() {
 	d3.select(`#${mapName}-data-link`).attr('href', `/assets/data/${timeseriesfile}`)
-	d3.select(`#${mapName}-shade`).attr('class', 'shade shade-on background-color-sea')
+	d3.select(`#${mapName}-shade`).attr('class', 'shade shade-on')
 	d3.json(`/assets/data/${timeseriesfile}`).then(timeseries);
 }
 
@@ -156,7 +156,7 @@ function timeseries(data) {
             },
 		});
 	}
-	d3.select(`#${mapName}-shade`).attr('class', 'shade shade-off background-color-sea')
+	d3.select(`#${mapName}-shade`).attr('class', 'shade shade-off')
 	d3.select('#yminup').on('click', function() {
 		ymin = ymin + 0.1;
 		chart.axis.min(ymin);

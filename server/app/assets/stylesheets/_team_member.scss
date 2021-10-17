@@ -1,8 +1,10 @@
 @import 'lib/bootstrap/scss/bootstrap';
+@import 'colours';
 
 article.team-member {
 	@extend .card;
 	@extend .my-4;
+	background-color: $theme-colour;
 	@extend .text-dark;
 	@extend .flex-row;
 }
