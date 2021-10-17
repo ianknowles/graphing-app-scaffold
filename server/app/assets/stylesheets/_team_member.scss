@@ -1,6 +1,6 @@
 @import 'lib/bootstrap/scss/bootstrap';
 
-.team-member {
+article.team-member {
 	@extend .card;
 	@extend .my-4;
 	@extend .text-dark;
