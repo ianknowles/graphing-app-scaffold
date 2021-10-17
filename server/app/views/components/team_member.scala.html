@@ -14,7 +14,8 @@
 				<ul class="list-group list-group-flush">
 				@for(link <- teamMember.links) {
 					<li class="list-group-item bg-transparent">
-						<svg class="bi mr-1" width="16" height="16" fill=""><use href='@routes.Assets.versioned("lib/bootstrap-icons/bootstrap-icons.svg")#@link.icon'/></svg><a class="card-link" href="@link.url" target="_blank" rel="noopener">@link.text</a>
+						@components.bootstrap_icon(link.icon, "bi-24 mr-1")
+						<a class="card-link" href="@link.url" target="_blank" rel="noopener">@link.text</a>
 					</li>
 				}
 				</ul>
