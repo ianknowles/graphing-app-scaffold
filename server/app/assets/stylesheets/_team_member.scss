@@ -1,0 +1,8 @@
+@import 'lib/bootstrap/scss/bootstrap';
+
+.team-member {
+	@extend .card;
+	@extend .my-4;
+	@extend .text-dark;
+	@extend .flex-row;
+}
