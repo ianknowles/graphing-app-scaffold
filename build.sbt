@@ -67,7 +67,8 @@ lazy val server = (project in file("server"))
 			"org.webjars" % "c3" % "0.6.6",
 			"com.typesafe.play" %% "play-slick" % "5.0.0",
 			"com.typesafe.play" %% "play-slick-evolutions" % "5.0.0",
-			"com.h2database" % "h2" % "1.4.200"
+			"com.h2database" % "h2" % "1.4.200",
+			"org.xerial" % "sqlite-jdbc" % "3.36.0.2"
 		),
 		Linux / maintainer := "Ian Knowles <ian@imknowles.co.uk>",
 		Linux / name := normalizedName.value,
