@@ -1,6 +1,6 @@
 @(team: List[TeamMember])(implicit webJarsUtil: org.webjars.play.WebJarsUtil, messages: Messages, request: Request[AnyContent])
 @main(messages("team.title")) {
-	<article class="p-4">
+	<article id="team" class="p-4">
 		<h2>Team members</h2>
 		@for(teamMember <- team) {
 			@views.html.components.team_member(teamMember)
