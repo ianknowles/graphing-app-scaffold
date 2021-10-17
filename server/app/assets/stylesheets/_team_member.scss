@@ -1,6 +1,10 @@
 @import 'lib/bootstrap/scss/bootstrap';
 @import 'colours';
 
+article#team {
+	@extend .p-4;
+}
+
 article.team-member {
 	@extend .card;
 	@extend .my-4;
