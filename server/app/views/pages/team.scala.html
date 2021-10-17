@@ -2,7 +2,7 @@
 @main(messages("team.title")) {
 	<article id="team" class="p-4">
 		<h2>Team members</h2>
-		@for(teamMember <- team) {
+		@for(teamMember: TeamMember <- team: List[TeamMember]) {
 			@views.html.components.team_member(teamMember)
 		}
 	</article>
