@@ -1,5 +1,5 @@
 @(teamMember: TeamMember)
-<div id='@{teamMember.name.replaceAll("\\s", "")}' class="card my-4 front-page-jumbo text-dark text-grow">
+<div id="@teamMember.id" class="card my-4 front-page-jumbo text-dark text-grow">
 	<div class="row no-gutters">
 		<div class="col-md-4 ">
 			<img class="rounded h-100 w-100" style="object-fit: cover" alt="@teamMember.name" src="@teamMember.imageURL" />
