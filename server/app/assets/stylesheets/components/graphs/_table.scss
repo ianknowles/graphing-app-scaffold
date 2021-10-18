@@ -2,6 +2,7 @@
 .table-container {
 	@extend .table-responsive;
 	@extend .position-relative;
+	@extend .shadow;
 	min-height: 40px;
 }
 
