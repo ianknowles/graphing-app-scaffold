@@ -17,3 +17,7 @@
 .shade-off {
 	display: none;
 }
+
+.shade-loading {
+	@extend .spinner-border;
+}
