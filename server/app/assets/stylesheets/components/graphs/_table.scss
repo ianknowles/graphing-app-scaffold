@@ -1,4 +1,10 @@
 
+.table-container {
+	@extend .table-responsive;
+	@extend .position-relative;
+	min-height: 40px;
+}
+
 @media
 only screen and (max-width: 1199.98px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
