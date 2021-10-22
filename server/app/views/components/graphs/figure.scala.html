@@ -1,5 +1,6 @@
+@* Must be placed inside a display: flex container *@
 @(elementID: String, caption: String = "", capclass: String = "", chartheight: Integer = 49, chartclass: String = "")
-<figure id="@{elementID}" class="position-relative h-100 d-flex flex-column justify-content-between shadow">
+<figure id="@{elementID}" class="position-relative flex-fill d-flex flex-column justify-content-between shadow">
 	<div id="@{elementID}-chart-area" class="border @{chartclass} flex-fill text-dark bg-light">
 		@components.shade(elementID)
 		<svg id="@{elementID}-SVG"></svg>
