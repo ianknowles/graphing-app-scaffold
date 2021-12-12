@@ -122,6 +122,8 @@ lazy val sharedJvm = shared.jvm
 lazy val sharedJs = shared.js
 
 server / PlayKeys.devSettings += "play.server.http.port" -> "9001"
+//TODO can devSettings accept lists? possible play issue as devSettings only accepts key, value pairs of type string
+//server / PlayKeys.devSettings += "play.filters.hosts.allowed" -> "localhost:9001"
 
 // loads the server project at sbt startup
 Global / onLoad := (Global / onLoad).value.andThen(state => "project server" :: state)
