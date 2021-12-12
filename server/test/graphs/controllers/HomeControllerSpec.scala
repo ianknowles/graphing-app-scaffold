@@ -5,6 +5,7 @@ import org.scalatestplus.play._
 import org.scalatestplus.play.guice._
 import org.webjars.play.WebJarsUtil
 import play.api.Configuration
+import play.api.i18n.{Lang, MessagesApi}
 import play.api.mvc.{AnyContentAsEmpty, Result}
 import play.api.test.Helpers._
 import play.api.test._
@@ -19,36 +20,40 @@ import scala.concurrent.Future
  * For more information, see https://www.playframework.com/documentation/latest/ScalaTestingWithScalaTest
  */
 class HomeControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injecting {
+	implicit val lang: Lang = Lang("en")
 	val headers: FakeHeaders = FakeHeaders(Seq(Http.HeaderNames.HOST -> "playapp"))
 
 	"HomeController GET" should {
 
 		"render the index page from a new instance of controller" in {
-			implicit val webJarsUtil: WebJarsUtil = app.injector.instanceOf[WebJarsUtil]
-			val controller: HomeController = new HomeController(stubControllerComponents(), Configuration(ConfigFactory.load()))
+			implicit val webJarsUtil: WebJarsUtil = inject[WebJarsUtil]
+			val messagesApi: MessagesApi = inject[MessagesApi]
+			val controller: HomeController = new HomeController(stubControllerComponents(messagesApi = messagesApi), Configuration(ConfigFactory.load()))
 			val home: Future[Result] = controller.index().apply(FakeRequest(GET, "/").withHeaders(headers))
 
 			status(home) mustBe OK
 			contentType(home) mustBe Some("text/html")
-			contentAsString(home) must include ("index.jumbo.title")
+			contentAsString(home) must include (messagesApi("index.jumbo.title"))
 		}
 
 		"render the index page from the application" in {
+			val messagesApi: MessagesApi = inject[MessagesApi]
 			val controller: HomeController = inject[HomeController]
 			val home: Future[Result] = controller.index().apply(FakeRequest(GET, "/").withHeaders(headers))
 
 			status(home) mustBe OK
 			contentType(home) mustBe Some("text/html")
-			contentAsString(home) must include ("jumbo.title")
+			contentAsString(home) must include (messagesApi("index.jumbo.title"))
 		}
 
 		"render the index page from the router" in {
+			val messagesApi: MessagesApi = inject[MessagesApi]
 			val request: FakeRequest[AnyContentAsEmpty.type] = FakeRequest(GET, "/").withHeaders(headers)
 			val home: Future[Result] = route(app, request).get
 
 			status(home) mustBe OK
 			contentType(home) mustBe Some("text/html")
-			contentAsString(home) must include ("jumbo.title")
+			contentAsString(home) must include (messagesApi("index.jumbo.title"))
 		}
 	}
 }
