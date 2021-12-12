@@ -1,6 +1,7 @@
 ![Preview image of the main visualisation for graphing-app-scaffold](server/public/images/site_preview.png "graphing-app-scaffold")
 
 # graphing-app-scaffold
+[![Scala CI](https://github.com/ianknowles/graphing-app-scaffold/actions/workflows/scala.yml/badge.svg?branch=core)](https://github.com/ianknowles/graphing-app-scaffold/actions/workflows/scala.yml)
 
 A Play Framework website for data visualisation.
 
