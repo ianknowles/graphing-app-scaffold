@@ -21,34 +21,34 @@ import scala.concurrent.Future
 class HomeControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injecting {
 	val headers: FakeHeaders = FakeHeaders(Seq(Http.HeaderNames.HOST -> "playapp"))
 
-  "HomeController GET" should {
+	"HomeController GET" should {
 
-    "render the index page from a new instance of controller" in {
+		"render the index page from a new instance of controller" in {
 			implicit val webJarsUtil: WebJarsUtil = app.injector.instanceOf[WebJarsUtil]
-      val controller: HomeController = new HomeController(stubControllerComponents(), Configuration(ConfigFactory.load()))
-      val home: Future[Result] = controller.index().apply(FakeRequest(GET, "/").withHeaders(headers))
+			val controller: HomeController = new HomeController(stubControllerComponents(), Configuration(ConfigFactory.load()))
+			val home: Future[Result] = controller.index().apply(FakeRequest(GET, "/").withHeaders(headers))
 
-      status(home) mustBe OK
-      contentType(home) mustBe Some("text/html")
-      contentAsString(home) must include ("index.jumbo.title")
-    }
+			status(home) mustBe OK
+			contentType(home) mustBe Some("text/html")
+			contentAsString(home) must include ("index.jumbo.title")
+		}
 
-    "render the index page from the application" in {
-      val controller: HomeController = inject[HomeController]
-      val home: Future[Result] = controller.index().apply(FakeRequest(GET, "/").withHeaders(headers))
+		"render the index page from the application" in {
+			val controller: HomeController = inject[HomeController]
+			val home: Future[Result] = controller.index().apply(FakeRequest(GET, "/").withHeaders(headers))
 
-      status(home) mustBe OK
-      contentType(home) mustBe Some("text/html")
-      contentAsString(home) must include ("jumbo.title")
-    }
+			status(home) mustBe OK
+			contentType(home) mustBe Some("text/html")
+			contentAsString(home) must include ("jumbo.title")
+		}
 
-    "render the index page from the router" in {
-      val request: FakeRequest[AnyContentAsEmpty.type] = FakeRequest(GET, "/").withHeaders(headers)
-      val home: Future[Result] = route(app, request).get
+		"render the index page from the router" in {
+			val request: FakeRequest[AnyContentAsEmpty.type] = FakeRequest(GET, "/").withHeaders(headers)
+			val home: Future[Result] = route(app, request).get
 
-      status(home) mustBe OK
-      contentType(home) mustBe Some("text/html")
-      contentAsString(home) must include ("jumbo.title")
-    }
-  }
+			status(home) mustBe OK
+			contentType(home) mustBe Some("text/html")
+			contentAsString(home) must include ("jumbo.title")
+		}
+	}
 }
