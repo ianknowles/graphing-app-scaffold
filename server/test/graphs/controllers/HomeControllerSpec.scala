@@ -5,9 +5,12 @@ import org.scalatestplus.play._
 import org.scalatestplus.play.guice._
 import org.webjars.play.WebJarsUtil
 import play.api.Configuration
+import play.api.mvc.{AnyContentAsEmpty, Result}
 import play.api.test.Helpers._
 import play.api.test._
 import play.mvc.Http
+
+import scala.concurrent.Future
 
 /**
  * Add your spec here.
@@ -22,8 +25,8 @@ class HomeControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injecting
 
     "render the index page from a new instance of controller" in {
 			implicit val webJarsUtil: WebJarsUtil = app.injector.instanceOf[WebJarsUtil]
-      val controller = new HomeController(stubControllerComponents(), Configuration(ConfigFactory.load()))
-      val home = controller.index().apply(FakeRequest(GET, "/").withHeaders(headers))
+      val controller: HomeController = new HomeController(stubControllerComponents(), Configuration(ConfigFactory.load()))
+      val home: Future[Result] = controller.index().apply(FakeRequest(GET, "/").withHeaders(headers))
 
       status(home) mustBe OK
       contentType(home) mustBe Some("text/html")
@@ -31,8 +34,8 @@ class HomeControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injecting
     }
 
     "render the index page from the application" in {
-      val controller = inject[HomeController]
-      val home = controller.index().apply(FakeRequest(GET, "/").withHeaders(headers))
+      val controller: HomeController = inject[HomeController]
+      val home: Future[Result] = controller.index().apply(FakeRequest(GET, "/").withHeaders(headers))
 
       status(home) mustBe OK
       contentType(home) mustBe Some("text/html")
@@ -40,8 +43,8 @@ class HomeControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injecting
     }
 
     "render the index page from the router" in {
-      val request = FakeRequest(GET, "/").withHeaders(headers)
-      val home = route(app, request).get
+      val request: FakeRequest[AnyContentAsEmpty.type] = FakeRequest(GET, "/").withHeaders(headers)
+      val home: Future[Result] = route(app, request).get
 
       status(home) mustBe OK
       contentType(home) mustBe Some("text/html")
