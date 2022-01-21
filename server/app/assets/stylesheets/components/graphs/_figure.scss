@@ -25,3 +25,13 @@ figure.map-contain {
 	//@include mb-0
 	@extend .svgtext
 }
+
+.figure-control-bar {
+	@extend .btn-toolbar;
+	@extend .mt-2;
+	@extend .mb-0;
+	@extend .mr-2;
+	@extend .ml-lg-auto;
+	@extend .flex-column;
+	@extend .flex-lg-row;
+}

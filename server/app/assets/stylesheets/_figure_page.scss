@@ -1,0 +1,31 @@
+
+
+article.figure-article {
+	@extend .p-4;
+	height: 100%;
+	@extend .text-dark;
+}
+
+.figure-card {
+	@extend .card;
+	height: 100%;
+}
+
+.figure-card-header {
+	@extend .card-header;
+	@extend .d-flex;
+	@extend .flex-column;
+	@extend .flex-lg-row;
+}
+
+.figure-card-header h2 {
+	@extend .p-2;
+	@extend .mb-0;
+	@extend .svgtext;
+}
+
+.figure-card-body {
+	@extend .card-body;
+	@extend .d-flex;
+	min-height: 50vh;
+}

@@ -28,7 +28,7 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 		// allow use of the auto json convert and avoid the boilerplate
 		val files: Seq[FileOption] = config.get[Seq[FileOption]]("graph_files")
 
-		Ok(views.html.pages.dashboard(files.toList))
+		Ok(views.html.pages.dashboard("timeseries", "Dash", files.toList))
 	}
 
 	def about: Action[AnyContent] = TODO
@@ -43,7 +43,7 @@ class HomeController @Inject() (val controllerComponents: ControllerComponents, 
 
 	def donut: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
 		val files: Seq[FileOption] = config.get[Seq[FileOption]]("graph_files")
-		Ok(views.html.pages.donut(files.toList))
+		Ok(views.html.pages.donut("donut", "Donut", files.toList))
 	}
 
 	def project: Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
