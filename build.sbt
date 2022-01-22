@@ -14,6 +14,13 @@ import com.typesafe.sbt.packager.SettingsHelper.makeDeploymentSettings
  **/
 
 val projectName: String = "graphing-app-scaffold"
+val suffix = "-server"
+val projectNameMax = 32 - suffix.length
+val serverArtifactName = if (projectName.length > projectNameMax) {
+	s"${projectName.substring(0, projectNameMax)}$suffix"
+} else {
+	s"$projectName$suffix"
+}
 ThisBuild / organization := "uk.co.imknowles"
 
 ThisBuild / startYear := Some(2021)
@@ -45,7 +52,7 @@ lazy val root = (project in file("."))
 
 lazy val server = (project in file("server"))
 	.settings(
-		name := s"$projectName-server",
+		name := serverArtifactName,
 		scalaJSProjects := Seq(client, clientGraphing),
 		Assets / pipelineStages := Seq(scalaJSPipeline),
 		pipelineStages := Seq(digest, gzip),
